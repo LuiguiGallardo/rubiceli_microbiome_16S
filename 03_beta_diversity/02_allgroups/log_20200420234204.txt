@@ -1,0 +1,96 @@
+Logging started at 23:42:04 on 20 Apr 2020
+QIIME version: 1.9.0
+
+qiime_config values:
+blastmat_dir	/usr/share/ncbi/data
+pick_otus_reference_seqs_fp	/usr/lib/python2.7/dist-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+jobs_to_start	1
+qiime_scripts_dir	/usr/lib/qiime/bin/
+working_dir	.
+pynast_template_alignment_fp	/usr/share/qiime/data/core_set_aligned.fasta.imputed
+python_exe_fp	python
+temp_dir	/tmp
+assign_taxonomy_reference_seqs_fp	/usr/share/qiime/data/gg_13_8_otus/rep_set/97_otus.fasta
+blastall_fp	blastall
+seconds_to_sleep	60
+assign_taxonomy_id_to_taxonomy_fp	/usr/share/qiime/data/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+
+parameter file values:
+parallel:jobs_to_start	1
+
+Input file md5 sums:
+otu_table_0_005%.biom: 37264fe1b541ba1a5bbbe42007f6d09c
+map_Rubi_marzo.csv: 85a454a342657551905595f96502239a
+rep_phylo.tree: 28c0740b8a52e7293fc7e5d269dc73a9
+
+Executing commands.
+
+# Sample OTU table at 26942 seqs/sample command 
+single_rarefaction.py -i otu_table_0_005%.biom -o beta_global//otu_table_0_005%_even26942.biom -d 26942
+
+Stdout:
+
+Stderr:
+
+# Beta Diversity (weighted_unifrac) command 
+beta_diversity.py -i beta_global//otu_table_0_005%_even26942.biom -o beta_global/ --metrics weighted_unifrac  -t rep_phylo.tree 
+
+Stdout:
+
+Stderr:
+
+# Rename distance matrix (weighted_unifrac) command 
+mv beta_global//weighted_unifrac_otu_table_0_005%_even26942.txt beta_global//weighted_unifrac_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (weighted_unifrac) command 
+principal_coordinates.py -i beta_global//weighted_unifrac_dm.txt -o beta_global//weighted_unifrac_pc.txt 
+
+Stdout:
+
+Stderr:
+/usr/lib/python2.7/dist-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.0272758075964 and the largest is 0.689809476761.
+  RuntimeWarning
+
+# Make emperor plots, weighted_unifrac) command 
+make_emperor.py -i beta_global//weighted_unifrac_pc.txt -o beta_global//weighted_unifrac_emperor_pcoa_plot/ -m map_Rubi_marzo.csv 
+
+Stdout:
+
+Stderr:
+
+# Beta Diversity (unweighted_unifrac) command 
+beta_diversity.py -i beta_global//otu_table_0_005%_even26942.biom -o beta_global/ --metrics unweighted_unifrac  -t rep_phylo.tree 
+
+Stdout:
+
+Stderr:
+
+# Rename distance matrix (unweighted_unifrac) command 
+mv beta_global//unweighted_unifrac_otu_table_0_005%_even26942.txt beta_global//unweighted_unifrac_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (unweighted_unifrac) command 
+principal_coordinates.py -i beta_global//unweighted_unifrac_dm.txt -o beta_global//unweighted_unifrac_pc.txt 
+
+Stdout:
+
+Stderr:
+/usr/lib/python2.7/dist-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.00604732593021 and the largest is 0.885205636821.
+  RuntimeWarning
+
+# Make emperor plots, unweighted_unifrac) command 
+make_emperor.py -i beta_global//unweighted_unifrac_pc.txt -o beta_global//unweighted_unifrac_emperor_pcoa_plot/ -m map_Rubi_marzo.csv 
+
+Stdout:
+
+Stderr:
+
+
+Logging stopped at 23:42:24 on 20 Apr 2020

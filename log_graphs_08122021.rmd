@@ -1,0 +1,529 @@
+---
+title: 'Microbiome Rubiceli '
+author: "Luigui Gallardo Becerra, Dr. Adrián Ochoa Leyva"
+date: "8/12/2021"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(engine.opts = list(bash = "-l"))
+knitr::opts_knit$set(root.dir = '/Users/luigui/Documents/rubiceli_microbiome_16S')
+
+# Packages installation
+library(colorRamps)
+library(ggplot2)
+library(reshape)
+library(scales)
+library(jcolors)
+library(grid)
+library(RColorBrewer)
+library(dplyr)
+library(ggpubr)
+```
+
+## Taxonomy, only **Initial feces** phylum level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L2.txt",
+      header = TRUE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(grepl("k__", taxa))
+
+filt_table$taxa <- gsub('k__Bacteria.p__', '', filt_table$taxa)
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+filt_table <- subset(filt_table, taxa != "")
+
+# Filter only "Initial" samples
+filt_table <- filt_table %>% filter(grepl("Inicial", group))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group, Inicial = "Initial feces")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("phylum")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/phylum_initial-feces.svg",
+       width = 3,
+       height = 4)
+print(barplot_tax)
+dev.off()
+```
+
+![phylum_initial-feces](01_taxonomy/01_tax_sample/phylum_initial-feces.svg)
+
+## Alpha diversity, ND vs HFD
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+alpha_data <- read.table(file = "02_alpha_diversity/alpha_diversity_e24251_r10000.txt",
+                         header = TRUE,
+                         sep = "\t")
+
+# Filter groups DN and DAG
+filt_alpha_data <- alpha_data %>% filter(grepl('DN|DAG',
+                                               Grupo_Experimental))
+
+filt_alpha_data <- filt_alpha_data %>% filter(!grepl('_A',
+                                               Grupo_Experimental))
+
+# Change name of groups
+filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experimental,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
+
+filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
+                                                             levels=c("ND", "HFD")))
+# Define colors
+colors <- c("cornflowerblue",
+            "tomato")
+
+# P-value comparisons 
+p_value <- list(c("ND", "HFD"))
+
+# Observed otus boxplot
+observed_otus_boxplot <- ggplot(filt_alpha_data,
+                                aes(x = group,
+                                    y = Observed.OTUs)) +
+geom_boxplot(aes(color = group),
+             outlier.shape = NA) +
+geom_point(aes(color = group),
+    size = 2,
+    shape = 21,
+    position = position_jitterdodge()) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+labs(x = "",
+    y = "Observed OTUs") +
+scale_color_manual(values = colors) +
+stat_compare_means(comparisons = p_value,
+    method = "wilcox.test") +
+theme(legend.position = "none")
+
+# Creation of .svg
+ggsave("02_alpha_diversity/observed_nd_vs_hdf.svg",
+       width = 4,
+       height = 4)
+print(observed_otus_boxplot)
+dev.off()
+
+```
+
+![observed_nd_vs_hdf](02_alpha_diversity/observed_nd_vs_hdf.svg)
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Shannon boxplot
+shannon_boxplot <- ggplot(filt_alpha_data,
+                                aes(x = group,
+                                    y = Shannon.Index)) +
+geom_boxplot(aes(color = group),
+             outlier.shape = NA) +
+geom_point(aes(color = group),
+    size = 2,
+    shape = 21,
+    position = position_jitterdodge()) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+labs(x = "",
+    y = "Shannon Index") +
+scale_color_manual(values = colors) +
+stat_compare_means(comparisons = p_value,
+    method = "wilcox.test") +
+theme(legend.position = "none")
+
+# Creation of .svg
+ggsave("02_alpha_diversity/shannon_nd_vs_hdf.svg",
+       width = 4,
+       height = 4)
+print(shannon_boxplot)
+dev.off()
+```
+
+![shannon_nd_vs_hdf](02_alpha_diversity/shannon_nd_vs_hdf.svg)
+
+## Beta diverstity, Unweighted UniFrac ND vs HFD
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+beta_data <- read.table(file = "03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_r_pc.txt",
+                         header = TRUE,
+                         sep = "\t")
+
+# Define colors and shapes
+colors <- c("tomato",
+            "cornflowerblue")
+
+shapes <- c(15,
+            16)
+
+# PCoA plot
+pcoa_unweighted <- ggplot(beta_data, aes(x = pc1_0.490934671745,
+                                              y = pc2_0.165542897875)) +
+geom_point(aes(col=group,
+    shape=group),
+    size = 3) +
+scale_color_manual(values = colors) +
+scale_shape_manual(values = shapes) +
+labs(y = "PC2 (16.55%)",
+     x = "PC1 (49.09%)",
+    title = "ANOSIM=0.9630; p-value=0.002") +
+geom_hline(yintercept=0,
+    color = "gray") +
+geom_vline(xintercept=0,
+    color = "gray") +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_blank(),
+    legend.position = "right",
+    legend.background = element_blank(),
+    plot.title = element_text(hjust = 0.5))
+
+
+# Creation of .svg
+ggsave("03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg",
+       width = 4.5,
+       height = 4)
+print(pcoa_unweighted)
+dev.off()
+```
+
+![unweighted_unifrac_nd_vs_hfd](03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg)
+
+## Taxonomy, 12 weeks ND vs HFD species level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L7_v2.txt",
+      header = TRUE,
+      sep = '\t',
+      check.names = FALSE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("group"))
+
+# Rename headers
+filt_table <- melted_table %>% 
+  rename(taxa = variable)
+
+# Rename groups
+filt_table$group <- recode_factor(filt_table$group,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_table <- filt_table %>% mutate(group = factor(group,
+                                                   levels=c("ND", "HFD")))
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="stack", stat="identity") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("species")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 0.45),
+   expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
+
+# Creation of .svg
+ggsave("01_taxonomy/02_tax_group/species_12w-ND-HFD.svg",
+       width = 3,
+       height = 4)
+print(barplot_tax)
+dev.off()
+```
+
+![species_12w-ND-HFD](01_taxonomy/02_tax_group/species_12w-ND-HFD.svg)
+
+## Alpha diversity, NE vs EE
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+alpha_data <- read.table(file = "02_alpha_diversity/alpha_diversity_e24251_r10000.txt",
+                         header = TRUE,
+                         sep = "\t")
+
+# Filter groups DN and DAG
+filt_alpha_data <- alpha_data %>% filter(grepl('DN|DAG',
+                                               Grupo_Experimental))
+
+filt_alpha_data <- filt_alpha_data %>% filter(grepl('_A',
+                                               Grupo_Experimental))
+
+# Change name of groups
+filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experimental,
+                                  DAG_AE = "HFD EE",
+                                  DN_AE = "ND EE",
+                                  DAG_AN = "HFD NE",
+                                  DN_AN = "ND NE")
+
+filt_alpha_data$Dieta <- recode_factor(filt_alpha_data$Dieta,
+                                  DAG = "HFD",
+                                  Normal = "ND")
+
+filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental",
+                                              diet = "Dieta")
+
+filt_alpha_data <- filt_alpha_data %>% mutate(diet = factor(diet,
+                                                             levels=c("ND",
+                                                                      "HFD")))
+
+filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
+                                                             levels=c("ND NE",
+                                                                      "ND EE",
+                                                                      "HFD NE",
+                                                                      "HFD EE")))
+
+# Define colors
+colors <- c("cornflowerblue",
+            "cornflowerblue",
+            "tomato",
+            "tomato")
+
+# P-value comparisons 
+p_value <- list(c("ND NE", "ND EE"),
+                c("HFD NE", "HFD EE"))
+
+# Observed otus boxplot
+observed_otus_boxplot <- ggplot(filt_alpha_data,
+                                aes(x = group,
+                                    y = Observed.OTUs)) +
+geom_boxplot(aes(color = group),
+             outlier.shape = NA) +
+geom_point(aes(color = group),
+    size = 2,
+    shape = 21,
+    position = position_jitterdodge()) +
+# facet_grid(~diet,
+#     scales = "free") +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+labs(x = "",
+    y = "Observed OTUs") +
+scale_color_manual(values = colors) +
+stat_compare_means(comparisons = p_value,
+    method = "wilcox.test") +
+theme(legend.position = "none")
+
+# Creation of .svg
+ggsave("02_alpha_diversity/observed_ee_vs_ne.svg",
+       width = 4,
+       height = 4)
+print(observed_otus_boxplot)
+dev.off()
+
+```
+
+![observed_ee_vs_ne](02_alpha_diversity/observed_ee_vs_ne.svg)
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Shannon boxplot
+shannon_boxplot <- ggplot(filt_alpha_data,
+                                aes(x = group,
+                                    y = Shannon.Index)) +
+geom_boxplot(aes(color = group),
+             outlier.shape = NA) +
+geom_point(aes(color = group),
+    size = 2,
+    shape = 21,
+    position = position_jitterdodge()) +
+# facet_grid(~diet,
+#     scales = "free") +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+labs(x = "",
+    y = "Shannon Index") +
+scale_color_manual(values = colors) +
+stat_compare_means(comparisons = p_value,
+    method = "wilcox.test") +
+theme(legend.position = "none")
+
+# Creation of .svg
+ggsave("02_alpha_diversity/shannon_ee_vs_ne.svg",
+       width = 4,
+       height = 4)
+print(shannon_boxplot)
+dev.off()
+```
+
+![shannon_ee_vs_ne](02_alpha_diversity/shannon_ee_vs_ne.svg)
+
+## Beta diversity, Unweighted UniFrac all samples
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+beta_data <- read.table(file = "03_beta_diversity/02_allgroups/unweighted_unifrac_r_pc.txt",
+                         header = TRUE,
+                         sep = "\t")
+
+# Change the name of groups
+beta_data$group <- recode_factor(beta_data$group,
+                                 Inicial = "Initial",
+                                 DN = "ND",
+                                 DAG = "HFD",
+                                 DN_AN = "ND NE",
+                                 DN_AE = "ND EE",
+                                 DAG_AN = "HFD NE",
+                                 DAG_AE = "HFD EE")
+
+filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
+                                                             levels=c(
+                                                               "Initial",
+                                                               "ND",
+                                                               "HFD",
+                                                               "ND NE",
+                                                               "ND EE",
+                                                               "HFD NE",
+                                                               "HFD EE")))
+
+# Define colors and shapes
+colors <- c("gray",
+            "darkgreen",
+            "orange",
+            "cyan3",
+            "darkcyan",
+            "brown1",
+            "brown3")
+
+shapes <- c(18,
+            17,
+            17,
+            16,
+            16,
+            15,
+            15)
+
+# PCoA plot
+pcoa_unweighted <- ggplot(beta_data, aes(x = pc1_0.481176791339,
+                                              y = pc2_0.0749116292045)) +
+geom_point(aes(col=group,
+    shape=group),
+    size = 2) +
+scale_color_manual(values = colors) +
+scale_shape_manual(values = shapes) +
+labs(y = "PC2 (7.49%)",
+     x = "PC1 (48.11%)") +
+geom_hline(yintercept=0,
+    color = "gray") +
+geom_vline(xintercept=0,
+    color = "gray") +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_blank(),
+    legend.position = "right",
+    legend.background = element_blank(),
+    plot.title = element_text(hjust = 0.5))
+
+# Creation of .svg
+ggsave("03_beta_diversity/02_allgroups/unweighted_unifrac_allgroups.svg",
+       width = 4.5,
+       height = 4)
+print(pcoa_unweighted)
+dev.off()
+```
+
+![unweighted_unifrac_allgroups](03_beta_diversity/02_allgroups/unweighted_unifrac_allgroups.svg)
+
+## Beta diversity, Unweighted UniFrac HFD NE vs EE
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+beta_data <- read.table(file = "03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_r_pc.txt",
+                         header = TRUE,
+                         sep = "\t")
+
+# Change the name of groups
+beta_data$group <- recode_factor(beta_data$group,
+                                 DAG_AN = "HFD NE",
+                                 DAG_AE = "HFD EE")
+
+# Define colors and shapes
+colors <- c("tomato",
+            "cornflowerblue")
+
+shapes <- c(15,
+            16)
+
+# PCoA plot
+pcoa_unweighted <- ggplot(beta_data, aes(x = pc1_0.279015942577,
+                                              y = pc2_0.152385555478)) +
+geom_point(aes(col=group,
+    shape=group),
+    size = 2) +
+scale_color_manual(values = colors) +
+scale_shape_manual(values = shapes) +
+labs(y = "PC2 (15.24%)",
+     x = "PC1 (27.90%)",
+    title = "ANOSIM=0.6111; p-value=0.003") +
+geom_hline(yintercept=0,
+    color = "gray") +
+geom_vline(xintercept=0,
+    color = "gray") +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_blank(),
+    legend.position = "right",
+    legend.background = element_blank(),
+    plot.title = element_text(hjust = 0.5))
+
+# Creation of .svg
+ggsave("03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_nd_vs_hfd_env.svg",
+       width = 4.5,
+       height = 4)
+print(pcoa_unweighted)
+dev.off()
+```
+
+![unweighted_unifrac_allgroups](03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_nd_vs_hfd_env.svg)
+

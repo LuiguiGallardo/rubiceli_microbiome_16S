@@ -1,0 +1,3 @@
+group	Bacteroides sp.	Oscillospira sp.	Lactobacillus sp.	Akkermansia muciniphila	Odoribacter sp.	Ruminococcus sp.	Mucispirillum schaedleri	[Ruminococcus] gnavus	Prevotella sp.	Bilophila sp.	Coprococcus sp.	Lactococcus sp.	Flavobacterium sp.	Anaeroplasma sp.	SMB53 sp.	Others
+DN	0.011213124	0.030422075	0.05402687	0.065507537	0.02252446	0.010732223	0.007968735	0.021769242	0.02797693	0.003481453	0.009966845	6.77E-06	0.006962906	0.011734665	6.77E-06	4.75E-02
+DAG	0.104844371	0.079547032	0.041666327	4.29E-05	0.030815572	0.032229823	0.028374815	0.014387403	0.000657127	0.013309878	0.006695754	0.015420031	0.005612107	6.73E-05	0.009856901	4.56E-02
