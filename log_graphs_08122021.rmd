@@ -21,6 +21,8 @@ library(grid)
 library(RColorBrewer)
 library(dplyr)
 library(ggpubr)
+library(ggordiplots)
+
 ```
 
 ## Taxonomy, only **Initial feces** phylum level
@@ -113,13 +115,18 @@ filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experi
 filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
 
 filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
-                                                             levels=c("ND", "HFD")))
-# Define colors
-colors <- c("cornflowerblue",
-            "tomato")
+                                                             levels=c("ND",
+                                                                      "HFD")))
+# Define colors and shapes
+colors <- c("#6600cc", # purple
+            "#800000") # brown
+
+shapes <- c(8, # *
+            3) # +
 
 # P-value comparisons 
-p_value <- list(c("ND", "HFD"))
+p_value <- list(c("ND",
+                  "HFD"))
 
 # Observed otus boxplot
 observed_otus_boxplot <- ggplot(filt_alpha_data,
@@ -184,24 +191,55 @@ dev.off()
 ## Beta diverstity, Unweighted UniFrac ND vs HFD
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
-# Input table
-beta_data <- read.table(file = "03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_r_pc.txt",
-                         header = TRUE,
-                         sep = "\t")
+# Input table and metadata
+beta_data <- read.table(file = "03_beta_diversity/01_nd_vs_hfd//unweighted_unifrac_dm.txt",
+                        sep="\t",
+                        header=T,
+                        row.names=1,
+                        check.names=F)
+
+metadata <- read.table(file = "metadata_allsamples.txt",
+                       sep="\t",
+                       header=T,
+                       row.names=1,
+                       check.names=F)
+
+metadata <- metadata %>% filter(grepl("D", Grupo_Experimental)) %>% filter(!grepl("_", Grupo_Experimental))
+
+# Change the name of groups
+metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
+                                             DN = "ND",
+                                             DAG = "HFD")
+
+metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
+                                                            levels=c(
+                                                              "ND",
+                                                              "HFD")))
 
 # Define colors and shapes
-colors <- c("tomato",
-            "cornflowerblue")
+colors <- c("#6600cc", # purple
+            "#800000") # brown
 
-shapes <- c(15,
-            16)
+shapes <- c(8, # *
+            3) # +
 
 # PCoA plot
-pcoa_unweighted <- ggplot(beta_data, aes(x = pc1_0.490934671745,
-                                              y = pc2_0.165542897875)) +
-geom_point(aes(col=group,
-    shape=group),
-    size = 3) +
+ord <- cmdscale(beta_data,
+                eig = T,
+                k=ncol(beta_data)-1)
+
+plt <- gg_ordiplot(ord,
+                   groups = metadata$Grupo_Experimental,
+                   conf = 0.95,
+                   spiders = TRUE,
+                   plot = FALSE,
+                   ellipse = FALSE,
+                   pt.size = 1)
+
+plt <- plt$plot +
+  geom_point(data = plt$df_ord,
+             aes(x = x, y = y, color = Group, shape = Group),
+             size = 2) +
 scale_color_manual(values = colors) +
 scale_shape_manual(values = shapes) +
 labs(y = "PC2 (16.55%)",
@@ -223,7 +261,7 @@ theme(legend.title = element_blank(),
 ggsave("03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg",
        width = 4.5,
        height = 4)
-print(pcoa_unweighted)
+print(plt)
 dev.off()
 ```
 
@@ -326,10 +364,10 @@ filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
                                                                       "HFD EE")))
 
 # Define colors
-colors <- c("cornflowerblue",
-            "cornflowerblue",
-            "tomato",
-            "tomato")
+colors <- c("#0000FF", # blue
+            "#EDBD04", # yellow
+            "#FB0207", # red
+            "#000000") # black
 
 # P-value comparisons 
 p_value <- list(c("ND NE", "ND EE"),
@@ -402,13 +440,21 @@ dev.off()
 ## Beta diversity, Unweighted UniFrac all samples
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
-# Input table
-beta_data <- read.table(file = "03_beta_diversity/02_allgroups/unweighted_unifrac_r_pc.txt",
-                         header = TRUE,
-                         sep = "\t")
+# Input table and metadata
+beta_data <- read.table(file = "03_beta_diversity/02_allgroups//unweighted_unifrac_dm.txt",
+                 sep="\t",
+                 header=T,
+                 row.names=1,
+                 check.names=F)
+
+metadata <- read.table(file = "metadata_allsamples.txt",
+                  sep="\t",
+                  header=T,
+                  row.names=1,
+                  check.names=F)
 
 # Change the name of groups
-beta_data$group <- recode_factor(beta_data$group,
+metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
                                  Inicial = "Initial",
                                  DN = "ND",
                                  DAG = "HFD",
@@ -417,7 +463,7 @@ beta_data$group <- recode_factor(beta_data$group,
                                  DAG_AN = "HFD NE",
                                  DAG_AE = "HFD EE")
 
-filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
+metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                              levels=c(
                                                                "Initial",
                                                                "ND",
@@ -428,27 +474,38 @@ filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
                                                                "HFD EE")))
 
 # Define colors and shapes
-colors <- c("gray",
-            "darkgreen",
-            "orange",
-            "cyan3",
-            "darkcyan",
-            "brown1",
-            "brown3")
+colors <- c("#4d4d4d", # gray
+            "#6600cc", # purple
+            "#800000", # brown
+            "#0000FF", # blue
+            "#EDBD04", # yellow
+            "#FB0207", # red
+            "#000000") # black
 
-shapes <- c(18,
-            17,
-            17,
-            16,
-            16,
-            15,
-            15)
+shapes <- c(4, # x
+            8, # *
+            3, # +
+            16, # circle
+            17, # triangle
+            15, # square
+            18) # diamond
 
 # PCoA plot
-pcoa_unweighted <- ggplot(beta_data, aes(x = pc1_0.481176791339,
-                                              y = pc2_0.0749116292045)) +
-geom_point(aes(col=group,
-    shape=group),
+ord <- cmdscale(beta_data,
+                eig = T,
+                k=ncol(beta_data)-1)
+
+plt <- gg_ordiplot(ord,
+                   groups = metadata$Grupo_Experimental,
+                   conf = 0.95,
+                   spiders = TRUE,
+                   plot = FALSE,
+                   ellipse = FALSE,
+                   pt.size = 1)
+
+plt <- plt$plot +
+geom_point(data = plt$df_ord,
+             aes(x = x, y = y, color = Group, shape = Group),
     size = 2) +
 scale_color_manual(values = colors) +
 scale_shape_manual(values = shapes) +
@@ -469,7 +526,7 @@ theme(legend.title = element_blank(),
 ggsave("03_beta_diversity/02_allgroups/unweighted_unifrac_allgroups.svg",
        width = 4.5,
        height = 4)
-print(pcoa_unweighted)
+print(plt)
 dev.off()
 ```
 
@@ -478,29 +535,55 @@ dev.off()
 ## Beta diversity, Unweighted UniFrac HFD NE vs EE
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
-# Input table
-beta_data <- read.table(file = "03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_r_pc.txt",
-                         header = TRUE,
-                         sep = "\t")
+# Input table and metadata
+beta_data <- read.table(file = "03_beta_diversity/03_nd_vs_hfd_env/weighted_unifrac_dm.txt",
+                        sep="\t",
+                        header=T,
+                        row.names=1,
+                        check.names=F)
+
+metadata <- read.table(file = "metadata_allsamples.txt",
+                       sep="\t",
+                       header=T,
+                       row.names=1,
+                       check.names=F)
+
+metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental)) %>% filter(grepl("_", Grupo_Experimental))
 
 # Change the name of groups
-beta_data$group <- recode_factor(beta_data$group,
-                                 DAG_AN = "HFD NE",
-                                 DAG_AE = "HFD EE")
+metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
+                                             DAG_AN = "HFD NE",
+                                             DAG_AE = "HFD EE")
+
+metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
+                                                            levels=c(
+                                                              "HFD NE",
+                                                              "HFD EE")))
 
 # Define colors and shapes
-colors <- c("tomato",
-            "cornflowerblue")
+colors <- c("#FB0207", # red
+            "#000000") # black
 
-shapes <- c(15,
-            16)
+shapes <- c(15, # square
+            18) # diamond
 
 # PCoA plot
-pcoa_unweighted <- ggplot(beta_data, aes(x = pc1_0.279015942577,
-                                              y = pc2_0.152385555478)) +
-geom_point(aes(col=group,
-    shape=group),
-    size = 2) +
+ord <- cmdscale(beta_data,
+                eig = T,
+                k=ncol(beta_data)-1)
+
+plt <- gg_ordiplot(ord,
+                   groups = metadata$Grupo_Experimental,
+                   conf = 0.95,
+                   spiders = TRUE,
+                   plot = FALSE,
+                   ellipse = FALSE,
+                   pt.size = 1)
+
+plt <- plt$plot +
+  geom_point(data = plt$df_ord,
+             aes(x = x, y = y, color = Group, shape = Group),
+             size = 2) +
 scale_color_manual(values = colors) +
 scale_shape_manual(values = shapes) +
 labs(y = "PC2 (15.24%)",
@@ -521,7 +604,7 @@ theme(legend.title = element_blank(),
 ggsave("03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_nd_vs_hfd_env.svg",
        width = 4.5,
        height = 4)
-print(pcoa_unweighted)
+print(plt)
 dev.off()
 ```
 
