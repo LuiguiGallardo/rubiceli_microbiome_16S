@@ -9,6 +9,9 @@
       stroke-linejoin: round;
       stroke-miterlimit: 10.00;
     }
+    .svglite text {
+      white-space: pre;
+    }
   ]]></style>
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
@@ -128,7 +131,7 @@
 </defs>
 <g clip-path='url(#cpMjkuNDN8MTI4LjA3fDMuOTl8MTYuMjg=)'>
 <rect x='29.43' y='3.99' width='98.65' height='12.29' style='stroke-width: 0.78; stroke: #333333; fill: #D9D9D9;' />
-<text x='78.75' y='12.42' text-anchor='middle' style='font-size: 6.40px; fill: #1A1A1A; font-family: Arial;' textLength='31.99px' lengthAdjust='spacingAndGlyphs'>Initial feces</text>
+<text x='78.75' y='12.42' text-anchor='middle' style='font-size: 6.40px;fill: #1A1A1A; font-family: "Arial";' textLength='31.99px' lengthAdjust='spacingAndGlyphs'>Initial feces</text>
 </g>
 <g clip-path='url(#cpMC4wMHwyMTYuMDB8MC4wMHwyODguMDA=)'>
 <polyline points='36.95,267.09 36.95,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
@@ -137,25 +140,25 @@
 <polyline points='87.11,267.09 87.11,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='103.83,267.09 103.83,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='120.55,267.09 120.55,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
-<text x='36.95' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>13i</text>
-<text x='53.67' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='4.98px' lengthAdjust='spacingAndGlyphs'>2i</text>
-<text x='70.39' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>31i</text>
-<text x='87.11' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>33i</text>
-<text x='103.83' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>50i</text>
-<text x='120.55' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>59i</text>
-<text x='25.84' y='267.39' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.00</text>
-<text x='25.84' y='205.19' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.25</text>
-<text x='25.84' y='142.98' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.50</text>
-<text x='25.84' y='80.77' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.75</text>
-<text x='25.84' y='18.57' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>1.00</text>
+<text x='36.95' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>13i</text>
+<text x='53.67' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='4.98px' lengthAdjust='spacingAndGlyphs'>2i</text>
+<text x='70.39' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>31i</text>
+<text x='87.11' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>33i</text>
+<text x='103.83' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>50i</text>
+<text x='120.55' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='8.53px' lengthAdjust='spacingAndGlyphs'>59i</text>
+<text x='25.84' y='267.39' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.00</text>
+<text x='25.84' y='205.19' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.25</text>
+<text x='25.84' y='142.98' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.50</text>
+<text x='25.84' y='80.77' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>0.75</text>
+<text x='25.84' y='18.57' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>1.00</text>
 <polyline points='27.44,265.10 29.43,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='27.44,202.90 29.43,202.90 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='27.44,140.69 29.43,140.69 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='27.44,78.49 29.43,78.49 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='27.44,16.28 29.43,16.28 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
-<text transform='translate(9.72,140.69) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: Arial;' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
+<text transform='translate(9.72,140.69) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='136.04' y='26.99' width='75.97' height='227.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='212.01' y='33.56' text-anchor='end' style='font-size: 8.00px; font-family: Arial;' textLength='33.33px' lengthAdjust='spacingAndGlyphs'>PHYLUM</text>
+<text x='212.01' y='33.56' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='33.33px' lengthAdjust='spacingAndGlyphs'>PHYLUM</text>
 <rect x='136.04' y='38.39' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='136.75' y='39.10' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='136.04' y='52.79' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
@@ -186,20 +189,20 @@
 <rect x='136.75' y='226.30' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #D6EBB2;' />
 <rect x='136.04' y='239.99' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='136.75' y='240.70' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #FFED6F;' />
-<text x='154.43' y='47.88' style='font-size: 6.40px; font-family: Arial;' textLength='30.20px' lengthAdjust='spacingAndGlyphs'>.Caldithrix.</text>
-<text x='154.43' y='62.28' style='font-size: 6.40px; font-family: Arial;' textLength='38.74px' lengthAdjust='spacingAndGlyphs'>Acidobacteria</text>
-<text x='154.43' y='76.68' style='font-size: 6.40px; font-family: Arial;' textLength='40.52px' lengthAdjust='spacingAndGlyphs'>Actinobacteria</text>
-<text x='154.43' y='91.08' style='font-size: 6.40px; font-family: Arial;' textLength='39.10px' lengthAdjust='spacingAndGlyphs'>Bacteroidetes</text>
-<text x='154.43' y='105.48' style='font-size: 6.40px; font-family: Arial;' textLength='23.81px' lengthAdjust='spacingAndGlyphs'>Chlorobi</text>
-<text x='154.43' y='119.88' style='font-size: 6.40px; font-family: Arial;' textLength='30.20px' lengthAdjust='spacingAndGlyphs'>Chloroflexi</text>
-<text x='154.43' y='134.28' style='font-size: 6.40px; font-family: Arial;' textLength='41.23px' lengthAdjust='spacingAndGlyphs'>Cyanobacteria</text>
-<text x='154.43' y='148.68' style='font-size: 6.40px; font-family: Arial;' textLength='43.72px' lengthAdjust='spacingAndGlyphs'>Deferribacteres</text>
-<text x='154.43' y='163.08' style='font-size: 6.40px; font-family: Arial;' textLength='29.48px' lengthAdjust='spacingAndGlyphs'>Firmicutes</text>
-<text x='154.43' y='177.48' style='font-size: 6.40px; font-family: Arial;' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Gemmatimonadetes</text>
-<text x='154.43' y='191.88' style='font-size: 6.40px; font-family: Arial;' textLength='41.59px' lengthAdjust='spacingAndGlyphs'>Proteobacteria</text>
-<text x='154.43' y='206.28' style='font-size: 6.40px; font-family: Arial;' textLength='32.70px' lengthAdjust='spacingAndGlyphs'>Tenericutes</text>
-<text x='154.43' y='220.68' style='font-size: 6.40px; font-family: Arial;' textLength='12.79px' lengthAdjust='spacingAndGlyphs'>TM6</text>
-<text x='154.43' y='235.08' style='font-size: 6.40px; font-family: Arial;' textLength='12.79px' lengthAdjust='spacingAndGlyphs'>TM7</text>
-<text x='154.43' y='249.48' style='font-size: 6.40px; font-family: Arial;' textLength='46.20px' lengthAdjust='spacingAndGlyphs'>Verrucomicrobia</text>
+<text x='154.43' y='47.88' style='font-size: 6.40px; font-family: "Arial";' textLength='30.20px' lengthAdjust='spacingAndGlyphs'>.Caldithrix.</text>
+<text x='154.43' y='62.28' style='font-size: 6.40px; font-family: "Arial";' textLength='38.74px' lengthAdjust='spacingAndGlyphs'>Acidobacteria</text>
+<text x='154.43' y='76.68' style='font-size: 6.40px; font-family: "Arial";' textLength='40.52px' lengthAdjust='spacingAndGlyphs'>Actinobacteria</text>
+<text x='154.43' y='91.08' style='font-size: 6.40px; font-family: "Arial";' textLength='39.10px' lengthAdjust='spacingAndGlyphs'>Bacteroidetes</text>
+<text x='154.43' y='105.48' style='font-size: 6.40px; font-family: "Arial";' textLength='23.81px' lengthAdjust='spacingAndGlyphs'>Chlorobi</text>
+<text x='154.43' y='119.88' style='font-size: 6.40px; font-family: "Arial";' textLength='30.20px' lengthAdjust='spacingAndGlyphs'>Chloroflexi</text>
+<text x='154.43' y='134.28' style='font-size: 6.40px; font-family: "Arial";' textLength='41.23px' lengthAdjust='spacingAndGlyphs'>Cyanobacteria</text>
+<text x='154.43' y='148.68' style='font-size: 6.40px; font-family: "Arial";' textLength='43.72px' lengthAdjust='spacingAndGlyphs'>Deferribacteres</text>
+<text x='154.43' y='163.08' style='font-size: 6.40px; font-family: "Arial";' textLength='29.48px' lengthAdjust='spacingAndGlyphs'>Firmicutes</text>
+<text x='154.43' y='177.48' style='font-size: 6.40px; font-family: "Arial";' textLength='57.59px' lengthAdjust='spacingAndGlyphs'>Gemmatimonadetes</text>
+<text x='154.43' y='191.88' style='font-size: 6.40px; font-family: "Arial";' textLength='41.59px' lengthAdjust='spacingAndGlyphs'>Proteobacteria</text>
+<text x='154.43' y='206.28' style='font-size: 6.40px; font-family: "Arial";' textLength='32.70px' lengthAdjust='spacingAndGlyphs'>Tenericutes</text>
+<text x='154.43' y='220.68' style='font-size: 6.40px; font-family: "Arial";' textLength='12.79px' lengthAdjust='spacingAndGlyphs'>TM6</text>
+<text x='154.43' y='235.08' style='font-size: 6.40px; font-family: "Arial";' textLength='12.79px' lengthAdjust='spacingAndGlyphs'>TM7</text>
+<text x='154.43' y='249.48' style='font-size: 6.40px; font-family: "Arial";' textLength='46.20px' lengthAdjust='spacingAndGlyphs'>Verrucomicrobia</text>
 </g>
 </svg>

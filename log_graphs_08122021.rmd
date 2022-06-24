@@ -192,7 +192,7 @@ dev.off()
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 # Input table and metadata
-beta_data <- read.table(file = "03_beta_diversity/01_nd_vs_hfd//unweighted_unifrac_dm.txt",
+beta_data <- read.table(file = "03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_dm.txt",
                         sep="\t",
                         header=T,
                         row.names=1,
@@ -256,6 +256,7 @@ theme(legend.title = element_blank(),
     legend.background = element_blank(),
     plot.title = element_text(hjust = 0.5))
 
+plt
 
 # Creation of .svg
 ggsave("03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg",
@@ -441,7 +442,7 @@ dev.off()
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 # Input table and metadata
-beta_data <- read.table(file = "03_beta_diversity/02_allgroups//unweighted_unifrac_dm.txt",
+beta_data <- read.table(file = "03_beta_diversity/02_allgroups/unweighted_unifrac_dm.txt",
                  sep="\t",
                  header=T,
                  row.names=1,
@@ -536,7 +537,7 @@ dev.off()
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 # Input table and metadata
-beta_data <- read.table(file = "03_beta_diversity/03_nd_vs_hfd_env/weighted_unifrac_dm.txt",
+beta_data <- read.table(file = "03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_dm.txt",
                         sep="\t",
                         header=T,
                         row.names=1,
@@ -599,6 +600,8 @@ theme(legend.title = element_blank(),
     legend.position = "right",
     legend.background = element_blank(),
     plot.title = element_text(hjust = 0.5))
+
+plt
 
 # Creation of .svg
 ggsave("03_beta_diversity/03_nd_vs_hfd_env/unweighted_unifrac_nd_vs_hfd_env.svg",

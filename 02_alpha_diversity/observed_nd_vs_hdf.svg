@@ -9,6 +9,9 @@
       stroke-linejoin: round;
       stroke-miterlimit: 10.00;
     }
+    .svglite text {
+      white-space: pre;
+    }
   ]]></style>
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
@@ -35,35 +38,35 @@
 <line x1='215.07' y1='236.23' x2='215.07' y2='253.23' style='stroke-width: 1.07; stroke: #800000; stroke-linecap: butt;' />
 <polygon points='171.98,213.56 171.98,236.23 258.16,236.23 258.16,213.56 171.98,213.56 ' style='stroke-width: 1.07; stroke: #800000; fill: #FFFFFF;' />
 <line x1='171.98' y1='216.60' x2='258.16' y2='216.60' style='stroke-width: 2.13; stroke: #800000; stroke-linecap: butt;' />
-<circle cx='226.17' cy='215.47' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='216.52' cy='194.82' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='223.25' cy='253.23' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='92.09' cy='61.87' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
-<circle cx='99.83' cy='57.69' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
-<circle cx='216.67' cy='217.74' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='96.44' cy='31.00' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
-<circle cx='99.29' cy='27.16' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
-<circle cx='109.09' cy='38.70' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
-<circle cx='207.11' cy='242.39' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='216.40' cy='212.92' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='105.52' cy='153.49' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
-<text x='157.61' y='13.24' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='33.74px' lengthAdjust='spacingAndGlyphs'>0.0022</text>
+<circle cx='215.41' cy='215.47' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='212.02' cy='194.82' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='213.02' cy='253.23' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='104.57' cy='61.87' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
+<circle cx='108.55' cy='57.69' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
+<circle cx='221.27' cy='217.74' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='90.83' cy='31.00' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
+<circle cx='89.14' cy='27.16' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
+<circle cx='98.00' cy='38.70' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
+<circle cx='204.74' cy='242.39' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='203.71' cy='212.92' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='93.67' cy='153.49' r='2.49' style='stroke-width: 0.71; stroke: #6600CC;' />
+<text x='157.61' y='13.24' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='33.74px' lengthAdjust='spacingAndGlyphs'>0.0022</text>
 <line x1='215.07' y1='22.64' x2='215.07' y2='15.85' style='stroke-width: 0.64;' />
 <line x1='215.07' y1='15.85' x2='100.15' y2='15.85' style='stroke-width: 0.64;' />
 <line x1='100.15' y1='15.85' x2='100.15' y2='22.64' style='stroke-width: 0.64;' />
 <rect x='31.21' y='3.99' width='252.81' height='261.12' style='stroke-width: 0.78; stroke: #333333;' />
 </g>
 <g clip-path='url(#cpMC4wMHwyODguMDB8MC4wMHwyODguMDA=)'>
-<text x='27.62' y='211.86' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>800</text>
-<text x='27.62' y='140.71' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>900</text>
-<text x='27.62' y='69.56' text-anchor='end' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='14.23px' lengthAdjust='spacingAndGlyphs'>1000</text>
+<text x='27.62' y='211.86' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>800</text>
+<text x='27.62' y='140.71' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='10.67px' lengthAdjust='spacingAndGlyphs'>900</text>
+<text x='27.62' y='69.56' text-anchor='end' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='14.23px' lengthAdjust='spacingAndGlyphs'>1000</text>
 <polyline points='29.21,209.57 31.21,209.57 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='29.21,138.42 31.21,138.42 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='29.21,67.27 31.21,67.27 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='100.15,267.09 100.15,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='215.07,267.09 215.07,265.10 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
-<text x='100.15' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='9.23px' lengthAdjust='spacingAndGlyphs'>ND</text>
-<text x='215.07' y='273.27' text-anchor='middle' style='font-size: 6.40px; fill: #4D4D4D; font-family: Arial;' textLength='13.13px' lengthAdjust='spacingAndGlyphs'>HFD</text>
-<text transform='translate(9.72,134.54) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: Arial;' textLength='57.80px' lengthAdjust='spacingAndGlyphs'>Observed OTUs</text>
+<text x='100.15' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='9.23px' lengthAdjust='spacingAndGlyphs'>ND</text>
+<text x='215.07' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='13.13px' lengthAdjust='spacingAndGlyphs'>HFD</text>
+<text transform='translate(9.72,134.54) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='57.80px' lengthAdjust='spacingAndGlyphs'>Observed OTUs</text>
 </g>
 </svg>
