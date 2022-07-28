@@ -1,0 +1,85 @@
+Logging started at 12:13:34 on 28 Jul 2022
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/a1/luigui/.local/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	./
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+parallel:jobs_to_start	1
+
+Input file md5 sums:
+otu_table_dag-sm_dag-ae.biom: 249704f3aea1b7aedce924a8e1770973
+map_Rubi_marzo.csv~: ae7c7290f7164e2416e3a1d429f29a0e
+../rep_phylo.tree: 28c0740b8a52e7293fc7e5d269dc73a9
+
+Executing commands.
+
+# Beta Diversity (weighted_unifrac) command 
+beta_diversity.py -i otu_table_dag-sm_dag-ae.biom -o beta_dag-sm_dag-ae --metrics weighted_unifrac  -t ../rep_phylo.tree 
+
+Stdout:
+
+Stderr:
+
+# Rename distance matrix (weighted_unifrac) command 
+mv beta_dag-sm_dag-ae/weighted_unifrac_otu_table_dag-sm_dag-ae.txt beta_dag-sm_dag-ae/weighted_unifrac_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (weighted_unifrac) command 
+principal_coordinates.py -i beta_dag-sm_dag-ae/weighted_unifrac_dm.txt -o beta_dag-sm_dag-ae/weighted_unifrac_pc.txt 
+
+Stdout:
+
+Stderr:
+
+# Make emperor plots, weighted_unifrac) command 
+make_emperor.py -i beta_dag-sm_dag-ae/weighted_unifrac_pc.txt -o beta_dag-sm_dag-ae/weighted_unifrac_emperor_pcoa_plot/ -m map_Rubi_marzo.csv~ 
+
+Stdout:
+
+Stderr:
+
+# Beta Diversity (unweighted_unifrac) command 
+beta_diversity.py -i otu_table_dag-sm_dag-ae.biom -o beta_dag-sm_dag-ae --metrics unweighted_unifrac  -t ../rep_phylo.tree 
+
+Stdout:
+
+Stderr:
+
+# Rename distance matrix (unweighted_unifrac) command 
+mv beta_dag-sm_dag-ae/unweighted_unifrac_otu_table_dag-sm_dag-ae.txt beta_dag-sm_dag-ae/unweighted_unifrac_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (unweighted_unifrac) command 
+principal_coordinates.py -i beta_dag-sm_dag-ae/unweighted_unifrac_dm.txt -o beta_dag-sm_dag-ae/unweighted_unifrac_pc.txt 
+
+Stdout:
+
+Stderr:
+
+# Make emperor plots, unweighted_unifrac) command 
+make_emperor.py -i beta_dag-sm_dag-ae/unweighted_unifrac_pc.txt -o beta_dag-sm_dag-ae/unweighted_unifrac_emperor_pcoa_plot/ -m map_Rubi_marzo.csv~ 
+
+Stdout:
+
+Stderr:
+
+
+Logging stopped at 12:13:46 on 28 Jul 2022
