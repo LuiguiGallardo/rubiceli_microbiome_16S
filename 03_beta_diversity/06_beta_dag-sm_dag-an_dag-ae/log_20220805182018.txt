@@ -1,0 +1,42 @@
+Logging started at 18:20:18 on 05 Aug 2022
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/home/linux/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/home/linux/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/home/linux/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/home/linux/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	/tmp/
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+parallel:jobs_to_start	1
+
+Input file md5 sums:
+otu_table_dag-sm_dag-an_dag-ae.biom: ed407ba452ecf6181f53cf821b0287e2
+map_Rubi_marzo.csv~: ae7c7290f7164e2416e3a1d429f29a0e
+
+Executing commands.
+
+# Beta Diversity (weighted_unifrac) command 
+beta_diversity.py -i otu_table_dag-sm_dag-an_dag-ae.biom -o beta_dag-sm_dag-an_dag-ae/ --metrics weighted_unifrac 
+
+
+
+*** ERROR RAISED DURING STEP: Beta Diversity (weighted_unifrac)
+Command run was:
+ beta_diversity.py -i otu_table_dag-sm_dag-an_dag-ae.biom -o beta_dag-sm_dag-an_dag-ae/ --metrics weighted_unifrac 
+Command returned exit status: 1
+Stdout:
+
+Stderr
+metric weighted_unifrac requires a tree, but none found
+
+
+Logging stopped at 18:20:20 on 05 Aug 2022
