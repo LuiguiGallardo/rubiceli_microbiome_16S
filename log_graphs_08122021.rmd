@@ -1051,11 +1051,6 @@ metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
                                              DAG_AN = "HFD_NE",
                                              DAG_AE = "HFD_EE")
 
-#metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
-#                                                            levels=c(
-#                                                              "HFD_MS",
-#                                                              "HFD_EE")))
-
 # Define colors and shapes
 colors <- c("#800000", # brown HFD_MS
             "#FB0207", # red HDF_NE
@@ -1101,10 +1096,10 @@ theme(legend.title = element_blank(),
 plt
 
 # Creation of .svg
-ggsave("03_beta_diversity/05_dag-sm_vs_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg",
+ggsave("03_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg",
        width = 4.5,
        height = 4)
 dev.off()
 ```
 
-![unweighted_unifrac_nd_vs_hfd](03_beta_diversity/05_dag-sm_vs_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)
+![unweighted_unifrac_nd_vs_hfd](3_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)

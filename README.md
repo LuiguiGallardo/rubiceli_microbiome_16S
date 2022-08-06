@@ -49,3 +49,12 @@
 ## Beta diversity, HFD_MS vs HFD_EE
 
 ![unweighted_unifrac_dag-sm_vs_dag-an](03_beta_diversity/05_dag-sm_vs_dag-ae/unweighted_unifrac_dag-sm_vs_dag-ae.svg)
+
+## Alpha diversity, HFD_MS vs HFD_NE vd HFD_EE
+![observed_ee_vs_ne](./02_alpha_diversity/observed_hfd-ms_hfd-ne_hfd-ee.svg)
+
+![observed_ee_vs_ne](./02_alpha_diversity/shannon_hfd-ms_hfd-ne_hfd-ee.svg)
+
+## Beta diversity, HFD_MS vs HFD_NE vd HFD_EE
+
+![unweighted_unifrac_dag-sm_vs_dag-an](03_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)
