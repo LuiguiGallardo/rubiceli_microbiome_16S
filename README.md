@@ -58,3 +58,20 @@
 ## Beta diversity, HFD_MS vs HFD_NE vd HFD_EE
 
 ![unweighted_unifrac_dag-sm_vs_dag-an](03_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)
+
+## UPGMA Jackknife tree, all samples
+
+![allsamples_jackknife_tree](./03_beta_diversity/08_jackknife_upgma_trees/allsamples_jackknife_tree.svg)
+
+## UPGMA Jackknife tree, HFD_MS vs HFD_NE vd HFD_EE
+
+![hfd_groups_jackknife_tree](./03_beta_diversity/08_jackknife_upgma_trees/hfd_groups_jackknife_tree.svg)
+
+## Distance centroids beta diversity, all samples
+
+![beta_global_centroids](./03_beta_diversity/07_distance_boxplots/beta_global_centroids.svg)
+
+## Distance centroids, HFD_MS vs HFD_NE vd HFD_EE
+
+![beta_global_centroids](./03_beta_diversity/07_distance_boxplots/beta_dag-sm_dag-an_dag-ae_centroids.svg)
+
