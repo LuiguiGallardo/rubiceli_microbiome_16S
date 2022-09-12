@@ -59,6 +59,16 @@
 
 ![unweighted_unifrac_dag-sm_vs_dag-an](03_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)
 
+### Anosim between groups
+ 
+||anosim_unweighted_unifrac_dm_dag-an_dag-ae|anosim_unweighted_unifrac_dm_dag-an_dag-sm|anosim_unweighted_unifrac_dm_dag-sm_dag-ae|
+|-|-|-|-|
+|Sample size|12|12|12|
+|Number of groups|2|2|2|
+|Test statistic|0.607407407|0.492592593|0.32037037|
+|p-value|0.004|0.01|0.031|
+|Number of permutations|999|999|999|
+
 ## UPGMA Jackknife tree, all samples
 
 ![allsamples_jackknife_tree](./03_beta_diversity/08_jackknife_upgma_trees/allsamples_jackknife_tree.svg)
@@ -75,3 +85,5 @@
 
 ![beta_global_centroids](./03_beta_diversity/07_distance_boxplots/beta_dag-sm_dag-an_dag-ae_centroids.svg)
 
+## Venn diagram, OTUs level HFD_MS vs HFD_NE vd HFD_EE
+![venn_hfd_groups_otus](./04_venn_diagrams/venn_hfd_groups_otus.svg)
