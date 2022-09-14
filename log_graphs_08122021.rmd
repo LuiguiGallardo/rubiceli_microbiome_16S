@@ -91,6 +91,326 @@ dev.off()
 
 ![phylum_initial-feces](01_taxonomy/01_tax_sample/phylum_initial-feces.svg)
 
+## Taxonomy, only **Initial feces** class level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L3_v2.txt",
+      header = TRUE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Filter only "Initial" samples
+filt_table <- filt_table %>% filter(grepl("Inicial", group))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group, Inicial = "Initial feces")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("class")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 2,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/class_initial-feces.svg",
+       width = 4,
+       height = 4)
+dev.off()
+```
+
+![class_initial-feces](01_taxonomy/01_tax_sample/class_initial-feces.svg)
+
+
+## Taxonomy, only **Initial feces** order level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L4_v2.txt",
+      header = TRUE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Filter only "Initial" samples
+filt_table <- filt_table %>% filter(grepl("Inicial", group))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group, Inicial = "Initial feces")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("order")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 3,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/order_initial-feces.svg",
+       width = 5,
+       height = 4)
+dev.off()
+```
+
+![order_initial-feces](01_taxonomy/01_tax_sample/order_initial-feces.svg)
+
+## Taxonomy, only **Initial feces** family level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L5_v2.txt",
+      header = TRUE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Filter only "Initial" samples
+filt_table <- filt_table %>% filter(grepl("Inicial", group))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group, Inicial = "Initial feces")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("family")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 4,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/family_initial-feces.svg",
+       width = 7,
+       height = 4)
+dev.off()
+```
+
+![family_initial-feces](01_taxonomy/01_tax_sample/family_initial-feces.svg)
+
+
+## Taxonomy, only **Initial feces** genera level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L6_v2.txt",
+      header = TRUE,
+      sep='\t')
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Filter only "Initial" samples
+filt_table <- filt_table %>% filter(grepl("Inicial", group))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group, Inicial = "Initial feces")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("genera")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 5,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/genera_initial-feces.svg",
+       width = 8,
+       height = 4)
+dev.off()
+```
+
+![genera_initial-feces](01_taxonomy/01_tax_sample/genera_initial-feces.svg)
+
+## Taxonomy, only **Initial feces** species level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L7_v2.txt",
+      header = TRUE,
+      sep='\t')
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Filter only "Initial" samples
+filt_table <- filt_table %>% filter(grepl("Inicial", group))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group, Inicial = "Initial feces")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("specie")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 6,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/species_initial-feces.svg",
+       width = 12,
+       height = 5)
+dev.off()
+```
+
+![species_initial-feces](01_taxonomy/01_tax_sample/species_initial-feces.svg)
+
+
 ## Alpha diversity, ND vs HFD
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
@@ -263,6 +583,317 @@ dev.off()
 ```
 
 ![unweighted_unifrac_nd_vs_hfd](03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg)
+
+
+## Taxonomy, 12 weeks ND vs HFD phylum level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L2_v2.txt",
+      header = TRUE,
+      sep = '\t',
+      check.names = FALSE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("group"))
+
+# Rename headers
+filt_table <- melted_table %>% 
+  rename(taxa = variable)
+
+# Filter and rename groups
+
+filt_table <- filt_table %>% 
+  filter(grepl("DAG|DN", group)) %>% 
+  filter(!grepl("_", group))
+
+filt_table$group <- recode_factor(filt_table$group,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_table <- filt_table %>% mutate(group = factor(group,
+                                                   levels=c("ND", "HFD")))
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="stack", stat="identity") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("phylum")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+   expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
+
+# Creation of .svg
+ggsave("01_taxonomy/02_tax_group/phylum_12w-ND-HFD.svg",
+       width = 3,
+       height = 4)
+dev.off()
+```
+
+![phylum_12w-ND-HFD](01_taxonomy/02_tax_group/phylum_12w-ND-HFD.svg)
+
+
+## Taxonomy, 12 weeks ND vs HFD class level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L3_v2.txt",
+      header = TRUE,
+      sep = '\t',
+      check.names = FALSE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("group"))
+
+# Rename headers
+filt_table <- melted_table %>% 
+  rename(taxa = variable)
+
+# Filter and rename groups
+
+filt_table <- filt_table %>% 
+  filter(grepl("DAG|DN", group)) %>% 
+  filter(!grepl("_", group))
+
+filt_table$group <- recode_factor(filt_table$group,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_table <- filt_table %>% mutate(group = factor(group,
+                                                   levels=c("ND", "HFD")))
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="stack", stat="identity") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("class")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+   expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 2,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/02_tax_group/class_12w-ND-HFD.svg",
+       width = 5,
+       height = 5)
+dev.off()
+```
+
+![class_12w-ND-HFD](01_taxonomy/02_tax_group/class_12w-ND-HFD.svg)
+
+
+## Taxonomy, 12 weeks ND vs HFD order level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L4_v2.txt",
+      header = TRUE,
+      sep = '\t',
+      check.names = FALSE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("group"))
+
+# Rename headers
+filt_table <- melted_table %>% 
+  rename(taxa = variable)
+
+# Filter and rename groups
+
+filt_table <- filt_table %>% 
+  filter(grepl("DAG|DN", group)) %>% 
+  filter(!grepl("_", group))
+
+filt_table$group <- recode_factor(filt_table$group,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_table <- filt_table %>% mutate(group = factor(group,
+                                                   levels=c("ND", "HFD")))
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="stack", stat="identity") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("order")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+   expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 3,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/02_tax_group/order_12w-ND-HFD.svg",
+       width = 6,
+       height = 5)
+dev.off()
+```
+
+![order_12w-ND-HFD](01_taxonomy/02_tax_group/order_12w-ND-HFD.svg)
+
+
+## Taxonomy, 12 weeks ND vs HFD order level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L5_v2.txt",
+      header = TRUE,
+      sep = '\t',
+      check.names = FALSE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("group"))
+
+# Rename headers
+filt_table <- melted_table %>% 
+  rename(taxa = variable)
+
+# Filter and rename groups
+
+filt_table <- filt_table %>% 
+  filter(grepl("DAG|DN", group)) %>% 
+  filter(!grepl("_", group))
+
+filt_table$group <- recode_factor(filt_table$group,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_table <- filt_table %>% mutate(group = factor(group,
+                                                   levels=c("ND", "HFD")))
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="stack", stat="identity") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("family")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 0.8),
+   expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 3,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/02_tax_group/family_12w-ND-HFD.svg",
+       width = 6,
+       height = 5)
+dev.off()
+```
+
+![family_12w-ND-HFD](01_taxonomy/02_tax_group/family_12w-ND-HFD.svg)
+
+
+## Taxonomy, 12 weeks ND vs HFD order level
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L6_v2.txt",
+      header = TRUE,
+      sep = '\t',
+      check.names = FALSE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("group"))
+
+# Rename headers
+filt_table <- melted_table %>% 
+  rename(taxa = variable)
+
+# Filter and rename groups
+
+filt_table <- filt_table %>% 
+  filter(grepl("DAG|DN", group)) %>% 
+  filter(!grepl("_", group))
+
+filt_table$group <- recode_factor(filt_table$group,
+                                  DAG = "HFD",
+                                  DN = "ND")
+
+filt_table <- filt_table %>% mutate(group = factor(group,
+                                                   levels=c("ND", "HFD")))
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="stack", stat="identity") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("genera")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 0.5),
+   expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 1),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line")) +
+guides(fill = guide_legend(ncol = 4,
+    byrow = TRUE))
+
+# Creation of .svg
+ggsave("01_taxonomy/02_tax_group/genera_12w-ND-HFD.svg",
+       width = 7,
+       height = 5)
+dev.off()
+```
+
+![genera_12w-ND-HFD](01_taxonomy/02_tax_group/genera_12w-ND-HFD.svg)
+
 
 ## Taxonomy, 12 weeks ND vs HFD species level
 
@@ -1102,4 +1733,4 @@ ggsave("03_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm
 dev.off()
 ```
 
-![unweighted_unifrac_nd_vs_hfd](3_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)
+![unweighted_unifrac_nd_vs_hfd](03_beta_diversity/06_beta_dag-sm_dag-an_dag-ae/unweighted_unifrac_dag-sm_vs_dag-an_dag-ae.svg)

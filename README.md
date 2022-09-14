@@ -4,6 +4,26 @@
 
 ![phylum_initial-feces](./01_taxonomy/01_tax_sample/phylum_initial-feces.svg)
 
+## Taxonomy, only **Initial feces** class level
+
+![class_initial-feces](./01_taxonomy/01_tax_sample/class_initial-feces.svg)
+
+## Taxonomy, only **Initial feces** order level
+
+![order_initial-feces](./01_taxonomy/01_tax_sample/order_initial-feces.svg)
+
+## Taxonomy, only **Initial feces** family level
+
+![family_initial-feces](./01_taxonomy/01_tax_sample/family_initial-feces.svg)
+
+## Taxonomy, only **Initial feces** genera level
+
+![genera_initial-feces](./01_taxonomy/01_tax_sample/genera_initial-feces.svg)
+
+## Taxonomy, only **Initial feces** species level
+
+![species_initial-feces](./01_taxonomy/01_tax_sample/species_initial-feces.svg)
+
 ## Alpha diversity, ND vs HFD
 
 ![observed_nd_vs_hdf](./02_alpha_diversity/observed_nd_vs_hdf.svg)
@@ -13,6 +33,26 @@
 ## Beta diverstity, Unweighted UniFrac ND vs HFD
 
 ![unweighted_unifrac_nd_vs_hfd](./03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg)
+
+## Taxonomy, 12 weeks ND vs HFD phylum level
+
+![phylum_12w-ND-HFD](./01_taxonomy/02_tax_group/phylum_12w-ND-HFD.svg)
+
+## Taxonomy, 12 weeks ND vs HFD class level
+
+![class_12w-ND-HFD](./01_taxonomy/02_tax_group/class_12w-ND-HFD.svg)
+
+## Taxonomy, 12 weeks ND vs HFD order level
+
+![order_12w-ND-HFD](./01_taxonomy/02_tax_group/order_12w-ND-HFD.svg)
+
+## Taxonomy, 12 weeks ND vs HFD family level
+
+![family_12w-ND-HFD](./01_taxonomy/02_tax_group/family_12w-ND-HFD.svg)
+
+## Taxonomy, 12 weeks ND vs HFD genera level
+
+![genera_12w-ND-HFD](./01_taxonomy/02_tax_group/genera_12w-ND-HFD.svg)
 
 ## Taxonomy, 12 weeks ND vs HFD species level
 
@@ -61,11 +101,11 @@
 
 ### Anosim between groups
  
-||anosim_unweighted_unifrac_dm_dag-an_dag-ae|anosim_unweighted_unifrac_dm_dag-an_dag-sm|anosim_unweighted_unifrac_dm_dag-sm_dag-ae|
+||HFD NE vs HFD EE|HFD NE vs HFD|HFD EE vs HFD|
 |-|-|-|-|
 |Sample size|12|12|12|
 |Number of groups|2|2|2|
-|Test statistic|0.607407407|0.492592593|0.32037037|
+|Test statistic (ANOSIM)|0.607407407|0.492592593|0.32037037|
 |p-value|0.004|0.01|0.031|
 |Number of permutations|999|999|999|
 
