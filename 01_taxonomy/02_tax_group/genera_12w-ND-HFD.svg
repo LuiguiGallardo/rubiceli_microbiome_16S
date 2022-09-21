@@ -181,7 +181,7 @@
 <text x='112.92' y='345.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='13.13px' lengthAdjust='spacingAndGlyphs'>HFD</text>
 <text transform='translate(9.72,170.54) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='147.91' y='19.75' width='352.10' height='301.58' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='500.01' y='26.33' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='33.78px' lengthAdjust='spacingAndGlyphs'>GENERA</text>
+<text x='323.96' y='26.33' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='33.78px' lengthAdjust='spacingAndGlyphs'>GENERA</text>
 <rect x='147.91' y='31.16' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='148.62' y='31.86' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='261.63' y='31.16' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />

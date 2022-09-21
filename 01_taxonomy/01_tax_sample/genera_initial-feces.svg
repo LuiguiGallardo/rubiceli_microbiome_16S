@@ -458,7 +458,7 @@
 <polyline points='27.44,16.28 29.43,16.28 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <text transform='translate(9.72,140.69) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='176.24' y='17.48' width='395.77' height='246.42' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='572.01' y='24.05' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='33.78px' lengthAdjust='spacingAndGlyphs'>GENERA</text>
+<text x='374.13' y='24.05' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='33.78px' lengthAdjust='spacingAndGlyphs'>GENERA</text>
 <rect x='176.24' y='28.88' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='176.95' y='29.59' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='245.88' y='28.88' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />

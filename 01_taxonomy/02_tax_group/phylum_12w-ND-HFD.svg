@@ -79,7 +79,7 @@
 <text x='104.71' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='13.13px' lengthAdjust='spacingAndGlyphs'>HFD</text>
 <text transform='translate(9.72,134.54) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='136.04' y='20.84' width='75.97' height='227.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='212.01' y='27.42' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='33.33px' lengthAdjust='spacingAndGlyphs'>PHYLUM</text>
+<text x='174.03' y='27.42' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='33.33px' lengthAdjust='spacingAndGlyphs'>PHYLUM</text>
 <rect x='136.04' y='32.24' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='136.75' y='32.95' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='136.04' y='46.64' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />

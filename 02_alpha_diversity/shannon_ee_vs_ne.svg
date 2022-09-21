@@ -46,27 +46,27 @@
 <line x1='247.14' y1='245.19' x2='247.14' y2='253.23' style='stroke-width: 1.07; stroke-linecap: butt;' />
 <polygon points='224.09,217.76 224.09,245.19 270.19,245.19 270.19,217.76 224.09,217.76 ' style='stroke-width: 1.07; fill: #FFFFFF;' />
 <line x1='224.09' y1='222.79' x2='270.19' y2='222.79' style='stroke-width: 2.13; stroke-linecap: butt;' />
-<circle cx='247.92' cy='217.76' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='249.92' cy='203.34' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='125.16' cy='145.37' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='184.92' cy='149.21' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='250.42' cy='253.23' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='123.10' cy='50.34' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='122.57' cy='164.16' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='249.00' cy='250.98' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='121.85' cy='78.27' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='247.18' cy='227.82' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='184.52' cy='194.47' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='126.24' cy='86.61' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='188.02' cy='223.85' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='65.69' cy='77.08' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
-<circle cx='188.39' cy='218.43' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='66.26' cy='98.78' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
-<circle cx='64.39' cy='56.57' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
-<circle cx='187.59' cy='157.68' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='188.46' cy='203.73' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='243.81' cy='217.76' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='124.89' cy='101.17' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='245.05' cy='217.76' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='250.74' cy='203.34' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='122.04' cy='145.37' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='181.71' cy='149.21' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='250.73' cy='253.23' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='122.46' cy='50.34' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='127.22' cy='164.16' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='248.74' cy='250.98' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='122.58' cy='78.27' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='249.52' cy='227.82' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='182.73' cy='194.47' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='128.04' cy='86.61' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='184.94' cy='223.85' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='62.47' cy='77.08' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
+<circle cx='182.10' cy='218.43' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='60.08' cy='98.78' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
+<circle cx='65.86' cy='56.57' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
+<circle cx='181.85' cy='157.68' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='188.65' cy='203.73' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='244.30' cy='217.76' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='124.32' cy='101.17' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
 <text x='216.41' y='13.24' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='27.60px' lengthAdjust='spacingAndGlyphs'>0.092</text>
 <line x1='247.14' y1='21.94' x2='247.14' y2='15.85' style='stroke-width: 0.64;' />
 <line x1='247.14' y1='15.85' x2='185.67' y2='15.85' style='stroke-width: 0.64;' />

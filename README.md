@@ -1,6 +1,6 @@
 # Microbiome 16S, Rubiceli
 
-## Taxonomy, only **Initial feces** phylum level
+<!-- ## Taxonomy, only **Initial feces** phylum level
 
 ![phylum_initial-feces](./01_taxonomy/01_tax_sample/phylum_initial-feces.svg)
 
@@ -10,19 +10,25 @@
 
 ## Taxonomy, only **Initial feces** order level
 
-![order_initial-feces](./01_taxonomy/01_tax_sample/order_initial-feces.svg)
+![order_initial-feces](./01_taxonomy/01_tax_sample/order_initial-feces.svg) -->
 
 ## Taxonomy, only **Initial feces** family level
 
 ![family_initial-feces](./01_taxonomy/01_tax_sample/family_initial-feces.svg)
 
-## Taxonomy, only **Initial feces** genera level
+
+## Taxonomy, all samples (supplementary)
+
+![family_initial-feces](./01_taxonomy/01_tax_sample/family_allsamples.svg)
+
+
+<!-- ## Taxonomy, only **Initial feces** genera level
 
 ![genera_initial-feces](./01_taxonomy/01_tax_sample/genera_initial-feces.svg)
 
 ## Taxonomy, only **Initial feces** species level
 
-![species_initial-feces](./01_taxonomy/01_tax_sample/species_initial-feces.svg)
+![species_initial-feces](./01_taxonomy/01_tax_sample/species_initial-feces.svg) -->
 
 ## Alpha diversity, ND vs HFD
 
@@ -34,7 +40,7 @@
 
 ![unweighted_unifrac_nd_vs_hfd](./03_beta_diversity/01_nd_vs_hfd/unweighted_unifrac_nd_vs_hfd.svg)
 
-## Taxonomy, 12 weeks ND vs HFD phylum level
+<!-- ## Taxonomy, 12 weeks ND vs HFD phylum level
 
 ![phylum_12w-ND-HFD](./01_taxonomy/02_tax_group/phylum_12w-ND-HFD.svg)
 
@@ -44,19 +50,20 @@
 
 ## Taxonomy, 12 weeks ND vs HFD order level
 
-![order_12w-ND-HFD](./01_taxonomy/02_tax_group/order_12w-ND-HFD.svg)
+![order_12w-ND-HFD](./01_taxonomy/02_tax_group/order_12w-ND-HFD.svg) -->
 
 ## Taxonomy, 12 weeks ND vs HFD family level
 
 ![family_12w-ND-HFD](./01_taxonomy/02_tax_group/family_12w-ND-HFD.svg)
 
-## Taxonomy, 12 weeks ND vs HFD genera level
+<!-- ## Taxonomy, 12 weeks ND vs HFD genera level
 
 ![genera_12w-ND-HFD](./01_taxonomy/02_tax_group/genera_12w-ND-HFD.svg)
 
 ## Taxonomy, 12 weeks ND vs HFD species level
 
-![species_12w-ND-HFD](./01_taxonomy/02_tax_group/species_12w-ND-HFD.svg)
+![species_12w-ND-HFD](./01_taxonomy/02_tax_group/species_12w-ND-HFD.svg) -->
+
 
 ## Alpha diversity, NE vs EE
 

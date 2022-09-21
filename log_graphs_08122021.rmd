@@ -76,7 +76,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 1,
@@ -139,7 +139,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 2,
@@ -203,7 +203,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 3,
@@ -222,7 +222,7 @@ dev.off()
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 # Input table
-table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L5_v2.txt",
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L5_v3.txt",
       header = TRUE)
 
 # Reshape table
@@ -266,20 +266,90 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
-guides(fill = guide_legend(ncol = 4,
-    byrow = TRUE))
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
 
 # Creation of .svg
 ggsave("01_taxonomy/01_tax_sample/family_initial-feces.svg",
-       width = 7,
+       width = 3,
        height = 4)
 dev.off()
 ```
 
 ![family_initial-feces](01_taxonomy/01_tax_sample/family_initial-feces.svg)
+
+
+## Taxonomy, family level all samples
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L5_v3.txt",
+      header = TRUE)
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group,
+                                  Inicial = "Initial",
+                                  DN = "ND",
+                                  DAG = "HFD",
+                                  DN_AN = "ND NE",
+                                  DN_AE = "ND EE",
+                                  DAG_AN = "HFD NE",
+                                  DAG_AE = "HFD EE")
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = sample,
+    y = value,
+    fill = taxa)) +
+geom_bar(position="fill", stat="identity") +
+facet_grid(~group,
+    scales = "free") +
+labs(x = "",
+    y = "Relative abundance",
+    fill = toupper("family")) +
+scale_x_discrete(expand = c(0, 0)) +
+scale_y_continuous(limits = c(0, 1),
+    expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.title = element_text(hjust = 0.5),
+      legend.key.height = unit(1, "line"),
+      legend.key.width = unit(1, "line"),
+      axis.text.x = element_text(angle = 90,
+                                 vjust = 0.5,
+                                 hjust = 0.5)) +
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/family_allsamples.svg",
+       width = 7,
+       height = 4)
+dev.off()
+```
+
+![family_initial-feces](01_taxonomy/01_tax_sample/family_allsamples.svg)
 
 
 ## Taxonomy, only **Initial feces** genera level
@@ -331,7 +401,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 5,
@@ -395,7 +465,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 6,
@@ -631,7 +701,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 1,
@@ -693,7 +763,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 2,
@@ -755,7 +825,7 @@ scale_y_continuous(limits = c(0, 1),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 3,
@@ -771,11 +841,11 @@ dev.off()
 ![order_12w-ND-HFD](01_taxonomy/02_tax_group/order_12w-ND-HFD.svg)
 
 
-## Taxonomy, 12 weeks ND vs HFD order level
+## Taxonomy, 12 weeks ND vs HFD family level
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 # Input table
-table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L5_v2.txt",
+table <- read.table(file = "01_taxonomy/02_tax_group/formatted_table_L5_v3.txt",
       header = TRUE,
       sep = '\t',
       check.names = FALSE)
@@ -817,23 +887,22 @@ scale_y_continuous(limits = c(0, 0.8),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
-guides(fill = guide_legend(ncol = 3,
-    byrow = TRUE))
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
 
 # Creation of .svg
 ggsave("01_taxonomy/02_tax_group/family_12w-ND-HFD.svg",
-       width = 6,
-       height = 5)
+       width = 3,
+       height = 4)
 dev.off()
 ```
 
 ![family_12w-ND-HFD](01_taxonomy/02_tax_group/family_12w-ND-HFD.svg)
 
-
-## Taxonomy, 12 weeks ND vs HFD order level
+## Taxonomy, 12 weeks ND vs HFD genera level
 
 ```{r, echo=FALSE, warning=FALSE, include=FALSE}
 # Input table
@@ -879,7 +948,7 @@ scale_y_continuous(limits = c(0, 0.5),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 4,
@@ -936,7 +1005,7 @@ scale_y_continuous(limits = c(0, 0.45),
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
-theme(legend.title = element_text(hjust = 1),
+theme(legend.title = element_text(hjust = 0.5),
       legend.key.height = unit(1, "line"),
       legend.key.width = unit(1, "line")) +
 guides(fill = guide_legend(ncol = 1,

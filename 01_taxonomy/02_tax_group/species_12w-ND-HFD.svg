@@ -81,7 +81,7 @@
 <text x='93.85' y='273.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='13.13px' lengthAdjust='spacingAndGlyphs'>HFD</text>
 <text transform='translate(9.72,134.54) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='122.91' y='13.64' width='89.10' height='241.80' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='212.01' y='20.22' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='34.68px' lengthAdjust='spacingAndGlyphs'>SPECIES</text>
+<text x='167.46' y='20.22' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='34.68px' lengthAdjust='spacingAndGlyphs'>SPECIES</text>
 <rect x='122.91' y='25.04' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='123.62' y='25.75' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='122.91' y='39.44' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />

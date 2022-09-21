@@ -127,7 +127,7 @@
 <text x='143.20' y='345.27' text-anchor='middle' style='font-size: 6.40px;fill: #4D4D4D; font-family: "Arial";' textLength='13.13px' lengthAdjust='spacingAndGlyphs'>HFD</text>
 <text transform='translate(9.72,170.54) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='186.47' y='47.33' width='241.54' height='246.42' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='428.01' y='53.91' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='28.88px' lengthAdjust='spacingAndGlyphs'>ORDER</text>
+<text x='307.24' y='53.91' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='28.88px' lengthAdjust='spacingAndGlyphs'>ORDER</text>
 <rect x='186.47' y='58.73' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='187.18' y='59.44' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='282.42' y='58.73' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />

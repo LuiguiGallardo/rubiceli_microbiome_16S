@@ -302,7 +302,7 @@
 <polyline points='27.44,16.28 29.43,16.28 ' style='stroke-width: 0.78; stroke: #333333; stroke-linecap: butt;' />
 <text transform='translate(9.72,140.69) rotate(-90)' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>Relative abundance</text>
 <rect x='114.47' y='17.48' width='241.54' height='246.42' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
-<text x='356.01' y='24.05' text-anchor='end' style='font-size: 8.00px; font-family: "Arial";' textLength='28.88px' lengthAdjust='spacingAndGlyphs'>ORDER</text>
+<text x='235.24' y='24.05' text-anchor='middle' style='font-size: 8.00px; font-family: "Arial";' textLength='28.88px' lengthAdjust='spacingAndGlyphs'>ORDER</text>
 <rect x='114.47' y='28.88' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
 <rect x='115.18' y='29.59' width='12.98' height='12.98' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #8DD3C7;' />
 <rect x='210.42' y='28.88' width='14.40' height='14.40' style='stroke-width: 0.78; stroke: none; fill: #FFFFFF;' />
