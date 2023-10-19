@@ -344,7 +344,13 @@ guides(fill = guide_legend(ncol = 1,
     byrow = FALSE))
 
 # Creation of .svg
-ggsave("01_taxonomy/01_tax_sample/family_allsamples.svg",
+# ggsave("01_taxonomy/01_tax_sample/family_allsamples.svg",
+#        width = 7,
+#        height = 4)
+# dev.off()
+
+# Creation of .png
+ggsave("01_taxonomy/01_tax_sample/family_allsamples.png",
        width = 7,
        height = 4)
 dev.off()
