@@ -523,6 +523,34 @@ filt_table$group <- recode_factor(filt_table$group,
 colourCount = length(unique(filt_table$taxa))
 getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
 
+# P-value comparisons 
+p_value <- list(c("HFD 24W EE", "HFD 24W NE"),
+                
+                c("HFD 12W", "HFD 24W EE"),
+                c("HFD 12W", "HFD 24W NE"),
+                
+                c("ND 24W NE", "HFD 12W"),
+                c("ND 24W NE", "HFD 24W EE"),
+                c("ND 24W NE", "HFD 24W NE"),
+
+                c("ND 24W EE", "ND 24W NE"),
+                c("ND 24W EE", "HFD 12W"),
+                c("ND 24W EE", "HFD 24W EE"),
+                c("ND 24W EE", "HFD 24W NE"),
+                
+                c("ND 12W", "ND 24W EE"),
+                c("ND 12W", "ND 24W NE"),
+                c("ND 12W", "HFD 12W"),
+                c("ND 12W", "HFD 24W EE"),
+                c("ND 12W", "HFD 24W NE"),
+                
+                c("Initial", "ND 12W"),
+                c("Initial", "ND 24W EE"),
+                c("Initial", "ND 24W NE"),
+                c("Initial", "HFD 12W"),
+                c("Initial", "HFD 24W EE"),
+                c("Initial", "HFD 24W NE"))
+
 # Plot
 barplot_tax <- ggplot(filt_table, aes(x = group,
     y = value,
@@ -533,7 +561,13 @@ labs(title = "Coprococcus sp.",
      x = "",
     y = "Relative abundance",
     fill = "") +
-# scale_x_discrete(expand = c(0, 0)) +
+  stat_compare_means(
+    hide.ns = TRUE,
+    comparisons = p_value,
+    method = "wilcox.test",
+    label = "p.signif",
+    vjust = 0.7
+    ) +
 scale_fill_manual(values = getPalette(colourCount)) +
 theme_test(base_size = 8,
            base_family = "Arial") +
