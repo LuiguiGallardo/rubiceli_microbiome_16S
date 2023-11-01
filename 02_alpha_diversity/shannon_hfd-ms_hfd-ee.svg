@@ -38,18 +38,18 @@
 <line x1='214.58' y1='234.48' x2='214.58' y2='251.05' style='stroke-width: 1.07; stroke-linecap: butt;' />
 <polygon points='171.19,177.97 171.19,234.48 257.98,234.48 257.98,177.97 171.19,177.97 ' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFFFFF;' />
 <line x1='171.19' y1='188.33' x2='257.98' y2='188.33' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter;' />
-<circle cx='211.52' cy='177.97' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='94.76' cy='51.70' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='203.29' cy='148.24' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='94.51' cy='99.15' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='222.16' cy='251.05' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='107.59' cy='253.23' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='215.72' cy='246.41' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='207.84' cy='198.69' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='92.06' cy='27.16' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='92.89' cy='198.42' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
-<circle cx='211.95' cy='177.97' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='102.87' cy='106.24' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='218.23' cy='177.97' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='107.23' cy='51.70' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='210.72' cy='148.24' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='87.57' cy='99.15' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='205.75' cy='251.05' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='108.26' cy='253.23' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='204.51' cy='246.41' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='220.61' cy='198.69' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='94.12' cy='27.16' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='91.90' cy='198.42' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
+<circle cx='210.39' cy='177.97' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='100.54' cy='106.24' r='2.49' style='stroke-width: 0.71; stroke: #800000;' />
 <text x='156.72' y='13.24' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='21.47px' lengthAdjust='spacingAndGlyphs'>0.17</text>
 <line x1='214.58' y1='22.64' x2='214.58' y2='15.85' style='stroke-width: 0.64;' />
 <line x1='214.58' y1='15.85' x2='98.86' y2='15.85' style='stroke-width: 0.64;' />

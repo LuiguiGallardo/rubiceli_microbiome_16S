@@ -486,6 +486,82 @@ dev.off()
 ```
 
 ![species_initial-feces](01_taxonomy/01_tax_sample/species_initial-feces.svg)
+## Taxonomy, Coprococcus
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+# Input table
+table <- read.table(file = "01_taxonomy/01_tax_sample/formatted_table_L7_Coprococcus.tsv",
+      header = TRUE,
+      sep = "\t")
+
+# Reshape table
+melted_table <- melt(table, id.vars = c("SampleID", "Description"))
+
+# Rename headers
+melted_table <- melted_table %>% 
+  rename(sample = SampleID,
+    group = Description,
+    taxa = variable)
+
+# Filter only taxa
+filt_table <- melted_table %>% filter(!grepl("Grupo_Experimental|Dieta|Ambiente|Tiempo",
+                                             taxa))
+
+filt_table$value <- as.numeric(as.character(filt_table$value))
+
+# Change name of group
+filt_table$group <- recode_factor(filt_table$group,
+                                  Inicial = "Initial",
+                                  DN_12S = "ND 12W",
+                                  DN_24S_AE = "ND 24W EE",
+                                  DN_24S_AN = "ND 24W NE",
+                                  DAG_12S = "HFD 12W",
+                                  DAG_24S_AE = "HFD 24W EE",
+                                  DAG_24S_AN = "HFD 24W NE")
+
+# Colors
+colourCount = length(unique(filt_table$taxa))
+getPalette = colorRampPalette(brewer.pal(colourCount, "Set3"))
+
+# Plot
+barplot_tax <- ggplot(filt_table, aes(x = group,
+    y = value,
+    fill = taxa)) +
+geom_boxplot() +
+      geom_jitter(color="black", size=0.4, alpha=0.9) +
+labs(title = "Coprococcus sp.",
+     x = "",
+    y = "Relative abundance",
+    fill = "") +
+# scale_x_discrete(expand = c(0, 0)) +
+scale_fill_manual(values = getPalette(colourCount)) +
+theme_test(base_size = 8,
+           base_family = "Arial") +
+theme(legend.position = "none",
+      axis.text.x = element_text(angle = 90,
+                                 vjust = 0.5,
+                                 hjust = 0.5)) +
+guides(fill = guide_legend(ncol = 1,
+    byrow = FALSE))
+
+
+barplot_tax
+
+# Creation of .svg
+ggsave("01_taxonomy/01_tax_sample/Coprococcus_allsamples.svg",
+       width = 7,
+       height = 4)
+while (!is.null(dev.list()))  dev.off()
+
+# Creation of .png
+ggsave("01_taxonomy/01_tax_sample/Coprococcus_allsamples.png",
+       width = 7,
+       height = 4)
+while (!is.null(dev.list()))  dev.off()
+
+```
+
+![Coprococcus_initial-feces](01_taxonomy/01_tax_sample/Coprococcus_allsamples.png)
 
 
 ## Alpha diversity, ND vs HFD
