@@ -1438,8 +1438,8 @@ filt_alpha_data <- filt_alpha_data %>% filter(!grepl('_AE',
 
 # Change name of groups
 filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experimental,
-                                                    DAG = "HFD_MS",
-                                                    DAG_AN = "HFD_NE")
+                                                    DAG = "HFD MS",
+                                                    DAG_AN = "HFD NE")
 
 filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
 
@@ -1448,8 +1448,8 @@ colors <- c("#800000", # brown
             "#FB0207") # red
 
 # P-value comparisons 
-p_value <- list(c("HFD_MS",
-                  "HFD_NE"))
+p_value <- list(c("HFD MS",
+                  "HFD NE"))
 
 # Observed otus boxplot
 observed_otus_boxplot <- ggplot(filt_alpha_data,
@@ -1530,13 +1530,13 @@ metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental)) %>%
 
 # Change the name of groups
 metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
-                                             DAG = "HFD_MS",
-                                             DAG_AN = "HFD_NE")
+                                             DAG = "HFD MS",
+                                             DAG_AN = "HFD NE")
 
 metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                             levels=c(
-                                                              "HFD_MS",
-                                                              "HFD_NE")))
+                                                              "HFD MS",
+                                                              "HFD NE")))
 
 # Define colors and shapes
 colors <- c("#800000", # brown
@@ -1606,8 +1606,8 @@ filt_alpha_data <- filt_alpha_data %>% filter(!grepl('_AN',
 
 # Change name of groups
 filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experimental,
-                                                    DAG = "HFD_MS",
-                                                    DAG_AE = "HFD_EE")
+                                                    DAG = "HFD MS",
+                                                    DAG_AE = "HFD EE")
 
 filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
 
@@ -1616,8 +1616,8 @@ colors <- c("#800000", # brown
             "#000000") # black
 
 # P-value comparisons 
-p_value <- list(c("HFD_MS",
-                  "HFD_EE"))
+p_value <- list(c("HFD MS",
+                  "HFD EE"))
 
 # Observed otus boxplot
 observed_otus_boxplot <- ggplot(filt_alpha_data,
@@ -1697,13 +1697,13 @@ metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental)) %>%
 
 # Change the name of groups
 metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
-                                             DAG = "HFD_MS",
-                                             DAG_AE = "HFD_EE")
+                                             DAG = "HFD MS",
+                                             DAG_AE = "HFD EE")
 
 metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                             levels=c(
-                                                              "HFD_MS",
-                                                              "HFD_EE")))
+                                                              "HFD MS",
+                                                              "HFD EE")))
 
 # Define colors and shapes
 colors <- c("#800000", # brown
@@ -1770,9 +1770,9 @@ filt_alpha_data <- alpha_data %>% filter(grepl('DAG',
 
 # Change name of groups
 filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experimental,
-                                                    DAG = "HFD_MS",
-                                                    DAG_AN = "HFD_NE",
-                                                    DAG_AE = "HFD_EE")
+                                                    DAG = "HFD MS",
+                                                    DAG_AN = "HFD NE",
+                                                    DAG_AE = "HFD EE")
 
 filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
 
@@ -1782,9 +1782,9 @@ colors <- c("#800000", # brown HFD_MS
             "#000000") # black HFD_EE
 
 # P-value comparisons 
-p_value <- list(c("HFD_MS", "HFD_NE"),
-                c("HFD_EE", "HFD_NE"),
-                c("HFD_MS", "HFD_EE"))
+p_value <- list(c("HFD MS", "HFD NE"),
+                c("HFD EE", "HFD NE"),
+                c("HFD MS", "HFD EE"))
 
 # Observed otus boxplot
 observed_otus_boxplot <- ggplot(filt_alpha_data,
@@ -1864,9 +1864,9 @@ metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental))
 
 # Change name of groups
 metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
-                                             DAG = "HFD_MS",
-                                             DAG_AN = "HFD_NE",
-                                             DAG_AE = "HFD_EE")
+                                             DAG = "HFD MS",
+                                             DAG_AN = "HFD NE",
+                                             DAG_AE = "HFD EE")
 
 # Define colors and shapes
 colors <- c("#800000", # brown HFD_MS
