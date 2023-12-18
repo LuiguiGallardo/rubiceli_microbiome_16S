@@ -46,27 +46,27 @@
 <line x1='247.90' y1='247.98' x2='247.90' y2='253.23' style='stroke-width: 1.07; stroke-linecap: butt;' />
 <polygon points='225.33,224.64 225.33,247.98 270.47,247.98 270.47,224.64 225.33,224.64 ' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFFFFF;' />
 <line x1='225.33' y1='235.88' x2='270.47' y2='235.88' style='stroke-width: 2.13; stroke-linecap: butt; stroke-linejoin: miter;' />
-<circle cx='248.73' cy='234.14' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='244.47' cy='219.60' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='127.35' cy='115.09' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='185.25' cy='203.27' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='245.25' cy='253.23' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='130.39' cy='68.85' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='130.77' cy='107.02' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='245.95' cy='251.44' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='130.60' cy='50.34' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='247.42' cy='237.62' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='186.18' cy='194.98' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='128.19' cy='63.54' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
-<circle cx='184.61' cy='241.14' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='69.16' cy='58.02' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
-<circle cx='189.29' cy='237.63' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='63.88' cy='81.07' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
-<circle cx='67.71' cy='70.07' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
-<circle cx='191.36' cy='191.47' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='185.84' cy='217.98' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
-<circle cx='246.18' cy='221.47' r='2.49' style='stroke-width: 0.71;' />
-<circle cx='124.38' cy='105.40' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='247.32' cy='234.14' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='246.79' cy='219.60' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='129.16' cy='115.09' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='190.98' cy='203.27' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='248.35' cy='253.23' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='129.34' cy='68.85' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='128.04' cy='107.02' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='247.41' cy='251.44' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='128.33' cy='50.34' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='250.75' cy='237.62' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='189.77' cy='194.98' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='127.93' cy='63.54' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
+<circle cx='184.76' cy='241.14' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='69.48' cy='58.02' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
+<circle cx='188.32' cy='237.63' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='68.04' cy='81.07' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
+<circle cx='70.08' cy='70.07' r='2.49' style='stroke-width: 0.71; stroke: #0000FF;' />
+<circle cx='187.41' cy='191.47' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='191.14' cy='217.98' r='2.49' style='stroke-width: 0.71; stroke: #FB0207;' />
+<circle cx='249.38' cy='221.47' r='2.49' style='stroke-width: 0.71;' />
+<circle cx='126.04' cy='105.40' r='2.49' style='stroke-width: 0.71; stroke: #EDBD04;' />
 <text x='217.80' y='13.24' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='21.47px' lengthAdjust='spacingAndGlyphs'>0.13</text>
 <line x1='247.90' y1='21.94' x2='247.90' y2='15.85' style='stroke-width: 0.64;' />
 <line x1='247.90' y1='15.85' x2='187.71' y2='15.85' style='stroke-width: 0.64;' />

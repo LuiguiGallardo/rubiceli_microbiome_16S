@@ -624,8 +624,8 @@ filt_alpha_data <- filt_alpha_data %>% mutate(group = factor(group,
                                                              levels=c("ND",
                                                                       "HFD")))
 # Define colors and shapes
-colors <- c("#6600cc", # purple
-            "#800000") # brown
+colors <- c("#000000", # black,
+            "#FB0207") # red
 
 shapes <- c(8, # *
             3) # +
@@ -721,8 +721,8 @@ metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                               "HFD")))
 
 # Define colors and shapes
-colors <- c("#6600cc", # purple
-            "#800000") # brown
+colors <- c("#000000", # black,
+            "#FB0207") # red
 
 shapes <- c(8, # *
             3) # +
@@ -1371,8 +1371,8 @@ metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                               "HFD EE")))
 
 # Define colors and shapes
-colors <- c("#FB0207", # red
-            "#000000") # black
+colors <- c("#FB0207", # red HFD NE
+            "#0000FF") # blue HFD EE
 
 shapes <- c(15, # square
             18) # diamond
@@ -1530,17 +1530,17 @@ metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental)) %>%
 
 # Change the name of groups
 metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
-                                             DAG = "HFD MS",
+                                             DAG = "HFD",
                                              DAG_AN = "HFD NE")
 
 metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                             levels=c(
-                                                              "HFD MS",
+                                                              "HFD",
                                                               "HFD NE")))
 
 # Define colors and shapes
-colors <- c("#800000", # brown
-            "#FB0207") # red
+colors <- c("#FFA500", # orange HFD
+            "#FB0207") # red HDF NE
 
 shapes <- c(3, # +
             15) # square
@@ -1606,7 +1606,7 @@ filt_alpha_data <- filt_alpha_data %>% filter(!grepl('_AN',
 
 # Change name of groups
 filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experimental,
-                                                    DAG = "HFD MS",
+                                                    DAG = "HFD",
                                                     DAG_AE = "HFD EE")
 
 filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
@@ -1697,17 +1697,17 @@ metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental)) %>%
 
 # Change the name of groups
 metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
-                                             DAG = "HFD MS",
+                                             DAG = "HFD",
                                              DAG_AE = "HFD EE")
 
 metadata <- metadata %>% mutate(Grupo_Experimental = factor(Grupo_Experimental,
                                                             levels=c(
-                                                              "HFD MS",
+                                                              "HFD",
                                                               "HFD EE")))
 
 # Define colors and shapes
-colors <- c("#800000", # brown
-            "#000000") # black
+colors <- c("#FFA500", # brown
+            "#0000FF") # blue
 
 shapes <- c(3, # +
             18) # diamond
@@ -1777,9 +1777,9 @@ filt_alpha_data$Grupo_Experimental <- recode_factor(filt_alpha_data$Grupo_Experi
 filt_alpha_data <- filt_alpha_data %>% rename(group = "Grupo_Experimental")
 
 # Define colors
-colors <- c("#800000", # brown HFD_MS
-            "#FB0207", # red HDF_NE
-            "#000000") # black HFD_EE
+colors <- c("#FFA500", # orange HFD
+            "#FB0207", # red HDF NE
+            "#0000FF") # blue HFD EE
 
 # P-value comparisons 
 p_value <- list(c("HFD MS", "HFD NE"),
@@ -1864,18 +1864,18 @@ metadata <- metadata %>% filter(grepl("DAG", Grupo_Experimental))
 
 # Change name of groups
 metadata$Grupo_Experimental <- recode_factor(metadata$Grupo_Experimental,
-                                             DAG = "HFD MS",
+                                             DAG = "HFD",
                                              DAG_AN = "HFD NE",
                                              DAG_AE = "HFD EE")
 
 # Define colors and shapes
-colors <- c("#800000", # brown HFD_MS
-            "#FB0207", # red HDF_NE
-            "#000000") # black HFD_EE
+colors <- c("#FFA500", # orange HFD
+            "#FB0207", # red HDF NE
+            "#0000FF") # blue HFD EE
 
-shapes <- c(3, # + HFD_MS
-            15, # square HFD_EE
-            18) # diamond HDF_NE
+shapes <- c(3, # + HFD
+            15, # square HFD EE
+            18) # diamond HDF NE
 
 # PCoA plot
 ord <- cmdscale(beta_data,
